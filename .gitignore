@@ -2,10 +2,16 @@
 __pycache__/
 *.py[codz]
 *$py.class
-
+images/*
 # C extensions
 *.so
-
+# Homography ignore settings
+input_images/*
+!input_images/.gitkeep
+output_images/*
+!output_images/.gitkeep
+ground_truth/*
+!ground_truth/.gitkeep
 # Distribution / packaging
 .Python
 build/
