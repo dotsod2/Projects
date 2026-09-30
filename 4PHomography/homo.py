@@ -9,8 +9,8 @@ import os
 
 input_plot = input("Enter the plot number: ")
 
-input_folder = "plot" + input_plot
-output_folder = "plot" + input_plot + "_aligned"
+input_folder = "input_images/plot" + input_plot
+output_folder = "output_images/plot" + input_plot + "_aligned"
 
 os.makedirs(output_folder, exist_ok=True)
 
