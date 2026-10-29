@@ -1,8 +1,5 @@
 # This script should append a given append string to each file in a folder
 import os
-from shapely.geometry import Point
-import matplotlib as mpl
-import matplotlib.colors as mcolors
 import folium
 from collections import defaultdict
 import shutil
