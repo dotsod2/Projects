@@ -1,4 +1,5 @@
 # This script should append a given append string to each file in a folder
+# Note: Use plot_labeling venv
 import os
 import folium
 from collections import defaultdict
