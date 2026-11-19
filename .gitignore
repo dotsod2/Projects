@@ -223,3 +223,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 *.idea/
+
+# Batch cropping stuff
+Batch_Cropping/**/*.json
