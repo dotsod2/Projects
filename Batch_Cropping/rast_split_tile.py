@@ -19,9 +19,8 @@ OUTPUT_DIR = "dataset_512"              # Final output dataset directory
 
 # Map your Taxonomy labels to integer IDs (0 is reserved for background)
 CLASS_MAP = {
-    "Car": 1,
-    "Road": 2,
-    "Building": 3,
+    "Ground cover": 1,
+    "Vegetation": 2
 }
 USE_FULL_TAXONOMY_PATH = False          # True -> matches "Vehicles/Car", False -> matches "Car"
 
