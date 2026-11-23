@@ -3,8 +3,8 @@ __pycache__/
 *.py[codz]
 *$py.class
 images/*
-raw_images/*
-dataset*/*
+*/raw_images/*
+*/dataset_*
 # C extensions
 *.so
 # Homography ignore settings
