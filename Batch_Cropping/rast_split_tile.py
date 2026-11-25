@@ -15,7 +15,7 @@ import numpy as np
 # ==========================================
 JSON_PATH = "project-export-cleaned.json"       # Your Label Studio JSON export
 RAW_IMG_DIR = "raw_images"              # Folder containing your original images
-OUTPUT_DIR = "dataset_512"              # Final output dataset directory
+OUTPUT_DIR = "dataset_20250828_512"              # Final output dataset directory
 
 # Map your Taxonomy labels to integer IDs (0 is reserved for background)
 CLASS_MAP = {
