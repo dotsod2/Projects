@@ -15,9 +15,9 @@ def read_energy_mj(handle):
         return pynvml.nvmlDeviceGetPowerUsage(handle), False
 
 MODELS = [
-    {"tier": "FP16 (Dense)",        "repo": "microsoft/Phi-3.5-mini-instruct",                "mode": "fp16"},
-    {"tier": "INT8 (BitsAndBytes)", "repo": "microsoft/Phi-3.5-mini-instruct",                "mode": "int8"},
-    {"tier": "INT4 (AWQ)",          "repo": "jester6136/Phi-3.5-mini-instruct-awq", "mode": "awq"},
+    {"tier": "FP16 (Dense)",        "repo": "microsoft/Phi-3.5-mini-instruct", "mode": "fp16"},
+    {"tier": "INT8 (BitsAndBytes)", "repo": "microsoft/Phi-3.5-mini-instruct", "mode": "int8"},
+    {"tier": "INT4 (NF4 4-Bit)",    "repo": "microsoft/Phi-3.5-mini-instruct", "mode": "int4"},
 ]
 
 PROMPT = (
@@ -38,9 +38,14 @@ def load_model_and_tokenizer(cfg):
         model = AutoModelForCausalLM.from_pretrained(
             cfg["repo"], quantization_config=bnb_config, device_map="cuda"
         )
-    elif cfg["mode"] == "awq":
+    elif cfg["mode"] == "int4":
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16,
+        )
         model = AutoModelForCausalLM.from_pretrained(
-            cfg["repo"], dtype="auto", device_map="cuda"
+            cfg["repo"], quantization_config=bnb_config, device_map="cuda"
         )
     model.eval()
     return model, tokenizer
