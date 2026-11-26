@@ -17,7 +17,7 @@ def read_energy_mj(handle):
 MODELS = [
     {"tier": "FP16 (Dense)",        "repo": "microsoft/Phi-3.5-mini-instruct",                "mode": "fp16"},
     {"tier": "INT8 (BitsAndBytes)", "repo": "microsoft/Phi-3.5-mini-instruct",                "mode": "int8"},
-    {"tier": "INT4 (AWQ)",          "repo": "RedHatAI/Phi-3.5-mini-instruct-quantized.w4a16", "mode": "awq"},
+    {"tier": "INT4 (AWQ)",          "repo": "jester6136/Phi-3.5-mini-instruct-awq", "mode": "awq"},
 ]
 
 PROMPT = (
