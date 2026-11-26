@@ -96,7 +96,7 @@ for cfg in MODELS:
         results.append({
             "Precision": cfg["tier"],
             "Trial": trial,
-OBOBOB            "Peak_VRAM_GB": round(peak_vram_gb, 3),
+            "Peak_VRAM_GB": round(peak_vram_gb, 3),
             "TTFT_ms": round(ttft_ms, 2),
             "Latency_ms_per_tok": round(latency_ms_tok, 2),
             "Throughput_tok_per_s": round(throughput_tok_s, 1),
@@ -119,7 +119,7 @@ summary = df.groupby("Precision").agg(
     VRAM_GB=("Peak_VRAM_GB", "mean"),
     TTFT_ms=("TTFT_ms", "mean"),
     Latency_ms_tok=("Latency_ms_per_tok", "mean"),
-OBOBOB    Latency_std=("Latency_ms_per_tok", "std"),
+    Latency_std=("Latency_ms_per_tok", "std"),
     Power_W=("Avg_Power_W", "mean"),
     Energy_J_tok=("Energy_J_per_tok", "mean"),
     Energy_std=("Energy_J_per_tok", "std"),
