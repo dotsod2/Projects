@@ -6,6 +6,7 @@ images/*
 */raw_images/*
 */raw_images_batch2/*
 */dataset_*
+*.png
 # C extensions
 *.so
 # Homography ignore settings
